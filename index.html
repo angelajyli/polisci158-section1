@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angela Li</title>
+  <style>
+    :root {
+      --navy: #0b2a4a;
+      --blue: #1d5fa8;
+      --blue-light: #e6f0fb;
+      --blue-border: #c5daf2;
+      --text: #1f2a37;
+      --muted: #5b6b7d;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 16px;
+      background: #f7fafd;
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 64px auto;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: normal;
+      color: var(--navy);
+      margin: 0 0 6px;
+    }
+
+    .subtitle {
+      color: var(--blue);
+      margin: 0 0 32px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--blue);
+      margin: 0 0 16px;
+    }
+
+    section {
+      padding: 28px 0;
+      border-top: 1px solid var(--blue-border);
+    }
+
+    /* Keyword highlights */
+    .hl {
+      background: var(--blue-light);
+      color: var(--navy);
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    .kw {
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    /* Research cards */
+    .cards {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid var(--blue-border);
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      padding: 20px 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+      font-weight: normal;
+      color: var(--navy);
+    }
+
+    .card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    /* Dropdown */
+    details {
+      border-top: 1px solid var(--blue-light);
+      padding-top: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      color: var(--blue);
+      font-size: 0.95rem;
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: "▸";
+      display: inline-block;
+      width: 1em;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    summary:hover {
+      text-decoration: underline;
+    }
+
+    .project {
+      margin-top: 12px;
+      background: var(--blue-light);
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+
+    .project strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Angela Li</h1>
+    <p class="subtitle">Stanford University · POLISCI 158: AI and Politics</p>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        I'm a junior at Stanford studying
+        <span class="hl">Economics</span> and <span class="hl">Data Science</span>.
+        I'm interested in the physical systems behind the AI economy: the
+        <span class="kw">supply chains</span> that produce chips, the
+        <span class="kw">energy</span> needed to power data centers, and the
+        <span class="kw">infrastructure</span> that makes large-scale buildout possible.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research Interests &amp; Project Ideas</h2>
+      <div class="cards">
+
+        <div class="card">
+          <h3>Semiconductor &amp; AI Supply Chains</h3>
+          <p>
+            How <span class="kw">chips</span> and their key inputs move across borders,
+            and how <span class="kw">export controls</span> reshape the AI industry.
+          </p>
+          <details>
+            <summary>View project idea</summary>
+            <div class="project">
+              <strong>Semiconductor supply chain tracker</strong>
+              An agent that scrapes <span class="hl">trade data</span>,
+              <span class="hl">company filings</span>, and
+              <span class="hl">export-control announcements</span> to map where chips
+              and key inputs (like lithography tools and rare materials) are made, and
+              to flag how new policies shift those flows.
+            </div>
+          </details>
+        </div>
+
+        <div class="card">
+          <h3>Energy Demand &amp; Data Centers</h3>
+          <p>
+            What AI's growing <span class="kw">power demand</span> means for
+            <span class="kw">data center buildout</span> and the electric grid.
+          </p>
+          <details>
+            <summary>View project idea</summary>
+            <div class="project">
+              <strong>Data center energy monitor</strong>
+              An agent that collects <span class="hl">utility filings</span>,
+              <span class="hl">grid interconnection queues</span>, and local news on
+              proposed data centers, then estimates their expected power demand and
+              which regions face the most <span class="kw">grid strain</span>.
+            </div>
+          </details>
+        </div>
+
+        <div class="card">
+          <h3>Infrastructure Development</h3>
+          <p>
+            The economic and political constraints on building
+            <span class="kw">fabs</span>, <span class="kw">data centers</span>, and
+            <span class="kw">transmission lines</span>.
+          </p>
+          <details>
+            <summary>View project idea</summary>
+            <div class="project">
+              <strong>Infrastructure permitting and politics dashboard</strong>
+              An agent that follows <span class="hl">permitting decisions</span>,
+              <span class="hl">zoning hearings</span>, and state and local
+              <span class="hl">legislation</span> on data centers, fabs, and
+              transmission lines, to study where <span class="kw">public opposition</span>
+              or policy slows AI infrastructure buildout.
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>
